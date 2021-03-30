@@ -1,0 +1,29 @@
+<mat-card>
+
+    <form class="example-form" [formGroup]="SumbitForm" (ngReset)="onReset()" (ngSubmit)="onSubmit()">
+        <div class="textfield">
+            <mat-form-field class="example-full-width">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput placeholder="John Doe" [formControl]="name" required>
+                <mat-hint>full name</mat-hint>
+                <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="textfield">
+            <mat-form-field class="example-full-width">
+                <mat-label>Amount</mat-label>
+                <input type="number" matInput placeholder="4.20" [formControl]="amount" required>
+                <span matPrefix>€ </span>
+                <mat-hint>In euros</mat-hint>
+                <mat-error *ngIf="amount.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <button mat-raised-button type="submit" style="margin:10px" color="primary">Submit</button>
+        <button mat-raised-button type="reset" style="margin:10px" color="accent">Reset</button>
+
+    </form>
+
+    <h1>{{temp}}</h1>
+
+</mat-card>
