@@ -1,0 +1,11 @@
+<mat-card>
+
+    <div *ngFor="let item of paymentsmap | keyvalue">
+        <b>{{item.key}}</b> has payed €<b>{{item.value}} </b>in total.
+    </div>
+    <div class="total">
+        <h3>In total €{{totalPayed() | number:'1.2-2'}} was payed.</h3>
+        <h3>The average amount payed is: €{{ averageAmount() | number:'1.2-2' }}</h3> 
+    </div>
+
+</mat-card>

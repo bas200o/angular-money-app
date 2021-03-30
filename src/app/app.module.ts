@@ -11,13 +11,16 @@ import { BannerComponent } from './banner/banner.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import { PayedComponent } from './payed/payed.component';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputComponent,
     PaymentsComponent,
-    BannerComponent
+    BannerComponent,
+    PayedComponent
   ],
   imports: [
     BrowserModule,
@@ -28,9 +31,10 @@ import {MatButtonModule} from '@angular/material/button';
     ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
+    MatListModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [PaymentsComponent],
   bootstrap: [AppComponent]
 
 })

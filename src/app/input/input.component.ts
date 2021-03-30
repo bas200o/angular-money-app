@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
 import { FormBuilder } from '@angular/forms';
+import { PaymentsComponent } from '../payments/payments.component';
 
 @Component({
   selector: 'app-input',
@@ -14,9 +14,9 @@ import { FormBuilder } from '@angular/forms';
 export class InputComponent implements OnInit {
   ngOnInit(): void {
   }
-  temp = "temp";
   constructor(
     private formBuilder: FormBuilder,
+    public payment: PaymentsComponent
   ) { }
 
   SumbitForm = this.formBuilder.group({
@@ -44,8 +44,6 @@ export class InputComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.temp = this.SumbitForm.value;
-    this.SumbitForm.reset();
+    this.payment.addPayment(this.SumbitForm.controls.name.value, this.SumbitForm.controls.amount.value);
   }
-
 }

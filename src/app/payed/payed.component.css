@@ -1,0 +1,10 @@
+.mat-card {
+  margin: auto;
+  max-width: 400px;
+  padding: 10px;
+  text-align: center;
+}
+
+.total {
+  margin: 5px;
+}
