@@ -37,13 +37,17 @@ export class InputComponent implements OnInit {
     if (this.name.hasError('minLength')) {
       return 'You must enter a longer name';
     }
+    return '';
   }
+
+  
+
 
   onReset(): void {
     this.SumbitForm.reset();
   }
 
   onSubmit(): void {
-    this.payment.addPayment(this.SumbitForm.controls.name.value, this.SumbitForm.controls.amount.value);
+    this.payment.addPayment(this.SumbitForm.controls['name'].value, this.SumbitForm.controls['amount'].value);
   }
 }

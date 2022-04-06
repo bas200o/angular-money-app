@@ -11,19 +11,19 @@ export class PaymentsComponent implements OnInit {
 
   constructor() { 
 
-    this.payMap.set("Kees Visser", 22.69);
-    this.payMap.set("John Doe", 10.42);
-    this.payMap.set("Jan de Man", 13.37);
+    this.payMap.set("Kees Visser", 120);
+    this.payMap.set("John Doe", 10);
+    this.payMap.set("Jan de Man", 5);
 
   }
 
   ngOnInit(): void {
   }
 
-  addPayment(k, v) : void {
+  addPayment(k: any, v: any) : void {
     if(this.payMap.has(k))
     {
-      this.payMap.set(k,this.payMap.get(k).valueOf() + v);
+      this.payMap.set(k,this.payMap.get(k)?.valueOf() + v);
       return;
     }
 
